@@ -1,11 +1,12 @@
 "use client";
 
-import React from "react";
-import { Code, Server, Database, FileText, DownloadCloud } from "lucide-react"; // Added DownloadCloud icon
+import React, { useRef } from "react";
+import { Code, Server, Database, FileText, DownloadCloud } from "lucide-react";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 const cardsData = [
-   {
+  {
     title: "Frontend Developer",
     description:
       "I'm a frontend developer with experience in creating responsive and performance-optimized websites.",
@@ -27,7 +28,7 @@ const cardsData = [
     title: "Download My Resume",
     description: "Get a copy of my latest resume in PDF format.",
     icon: <FileText className="w-7 h-7 text-primary mb-3" />,
-    link: "/resume.pdf",
+    link: "/resume/PavishK_resume.pdf",
   },
 ];
 
@@ -38,6 +39,18 @@ const cardVariants = {
 };
 
 export default function About() {
+  const onClickResumeDownload = () => {
+    toast.success("Resume downloaded — thank you for your interest!");
+
+    // Create a temporary anchor programmatically
+    const link = document.createElement("a");
+    link.href = "/resume/PavishK_resume.pdf";
+    link.download = "PavishK_resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="w-full py-12 bg-homeBg flex flex-col items-center">
       <h2 className="text-3xl font-bold mb-8 text-primary">About Me</h2>
@@ -58,13 +71,12 @@ export default function About() {
             </h5>
             <p className="mb-3 font-normal text-primary">{card.description}</p>
             {card.link && (
-              <a
-                href={card.link}
-                download
-                className="inline-flex font-medium items-center text-accent hover:text-primary gap-2"
+              <button
+                className="cursor-pointer inline-flex font-medium items-center text-accent hover:text-red-600 gap-2"
+                onClick={onClickResumeDownload}
               >
                 <DownloadCloud className="w-4 h-4" /> Download
-              </a>
+              </button>
             )}
           </motion.div>
         ))}

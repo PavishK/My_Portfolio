@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       const sections = ['home', 'about', 'skills', 'projects', 'contact'];
       for (const section of sections) {
@@ -43,11 +43,11 @@ function App() {
         }
       }
 
-      setShowScrollTop(window.scrollY > 300);
+      setShowScrollTop(window.scrollY > 200);
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // set initial active section
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

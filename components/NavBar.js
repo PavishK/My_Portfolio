@@ -11,15 +11,16 @@ function NavBar({ onClickMenu, changeBg, activeSection }) {
       <h1 className='text-3xl font-bold'>Pavish K</h1>
       <ul className='sm:flex flex-row items-center justify-center gap-x-6 text-lg hidden'>
         {menuItems.map((item) => (
-          <li
-            key={item}
-            onClick={() => onClickMenu(item)}
-            className={`cursor-pointer capitalize transition-colors hover:text-accent ${
-              activeSection === item ? 'text-accent font-bold underline underline-offset-4' : 'text-gray-700'
-            }`}
-          >
-            {item}
-          </li>
+        <li
+          key={item}
+          onClick={() => onClickMenu(item)}
+          className={`cursor-pointer capitalize transition-colors hover:text-accent hover:underline hover:underline-offset-4 
+            ${activeSection == item 
+              ? 'text-accent font-bold underline underline-offset-4 decoration-2' 
+              : 'text-gray-700'}`}
+        >
+          {item}
+        </li>
         ))}
       </ul>
 
