@@ -1,0 +1,71 @@
+[
+  {
+    "title": "Course Booking Website",
+    "imageSrc": "/projects/pr-a.png",
+    "description": "A full-stack course booking application developed using modern technologies, allowing users to browse and register for various courses with ease.",
+    "skills": ["Vite + React", "Express.js", "Node.js", "MongoDB", "CSS"],
+    "source": "https://github.com/PavishK/Final_year_project_1"
+  },
+  {
+    "title": "Bakery Website",
+    "imageSrc": "/projects/pr-b.png",
+    "description": "A responsive and feature-rich bakery website created with the MERN stack, showcasing products and enhancing the overall learning experience.",
+    "skills": ["Angular", "Express.js", "Node.js", "MongoDB", "Tailwind CSS"],
+    "source": "https://github.com/PavishK/Final_year_project_2"
+  },
+  {
+    "title": "E-commerce Website",
+    "imageSrc": "/projects/pr-c.png",
+    "description": "A responsive and scalable e-commerce website developed using the MERN stack, awarded First Prize for its clean design and seamless functionality.",
+    "skills": ["Vite+React", "Express.js", "Node.js", "MongoDB", "CSS"],
+    "source": "https://github.com/PavishK/project_falls_ecommerce"
+  },
+{
+  "title": "CGVTT - TrainingTrains Certification Portal",
+  "imageSrc": "/projects/pr-e.png",
+  "description": "A full-stack web application built using the MERN stack with MySQL integration for TrainingTrains. It allows users to upload course tasks, request enrollment, and receive verifiable certificates. The platform features certificate generation and validation, a modern UI with React and TailwindCSS, and a secure backend with Node.js and Express.",
+  "skills": ["React", "Node.js", "Express.js", "MySQL", "MongoDB", "TailwindCSS"],
+  "source": "https://github.com/PavishK/CGTT_Project",
+  "demo": "https://cgtt-client.onrender.com"
+},
+{
+  "title": "PassNeko - Secure Password Manager",
+  "imageSrc": "/projects/pr-f.png",
+  "description": "PassNeko is a secure password manager built with Next.js and MySQL, designed to store user credentials in an encrypted format using bcrypt and crypto modules. It features user registration and login, password encryption that even the platform can’t decrypt, and a responsive, minimalist UI built with TailwindCSS. With a focus on privacy and simplicity, PassNeko helps users manage their credentials securely and efficiently.",
+  "skills": ["Next.js", "MySQL", "TailwindCSS", "bcryptjs", "crypto-js"],
+  "source": "https://github.com/PavishK/PassNeko",
+  "demo": "https://pass-neko.vercel.app/"
+},
+{
+  "title": "EveryOneZone - Real-Time Chat App",
+  "imageSrc": "/projects/pr-g.png",
+  "description": "EveryOneZone is a real-time chat application built with Next.js and Express.js, enabling users to communicate instantly in a shared public zone. It features real-time messaging using Socket.IO, secure JWT-based authentication, and responsive UI styled with TailwindCSS. Messages are stored using MongoDB, and the app emphasizes speed, simplicity, and scalability.",
+  "skills": ["Next.js", "Express.js", "MongoDB", "Socket.IO", "TailwindCSS", "JWT"],
+  "source": "https://github.com/PavishK/EveryOneZone--client",
+  "demo": "https://every-one-zone-client.vercel.app/"
+},
+{
+  "title": "PixelNoSekai - Anime-Themed Gallery Platform",
+  "imageSrc": "/projects/pr-h.png",
+  "description": "PixelNoSekai is an anime-themed gallery website where users can upload images with notes, view or download them anytime, and manage their collections. Built with Next.js, MySQL, and Prisma, it features secure Google authentication, responsive design, and an attractive UI styled with TailwindCSS.",
+  "skills": ["Next.js", "TypeScript", "MySQL", "Prisma", "Express.js", "Node.js", "TailwindCSS", "Next-Auth (Google)", "Cloudinary"],
+  "source": "https://github.com/PavishK/PixelNoSekai",
+  "demo": "https://pixel-no-sekai.vercel.app"
+},
+{
+  "title": "Employee Management System",
+  "imageSrc": "/projects/pr-i.png",
+  "description": "The Employee Management System (EMS) is a full-stack web application designed to simplify employee data management. It allows administrators to add, update, and delete employees, while providing employees with the ability to view their profiles. Built with React.js for the frontend and Spring Boot with Maven for the backend, it integrates MySQL for data storage and TailwindCSS for a responsive and modern UI.",
+  "skills": ["React.js", "Spring Boot", "Maven", "MySQL", "TailwindCSS", "REST API", "Java","Firebase (Google)"],
+  "source": "https://github.com/PavishK/Employee_Management_System",
+  "demo": "https://employee-management-system-client-abji.onrender.com"
+},
+{
+  "title": "ToDo-SMART",
+  "imageSrc": "/projects/pr-d.png",
+  "description": "A smart and modern To-Do List application built with Next.js, styled using TailwindCSS, secured with NextAuth, powered by MongoDB, and enhanced with Gemini AI for task insights.",
+  "skills": ["Next.js", "TailwindCSS", "NextAuth", "MongoDB", "Gemini AI"],
+  "source": "https://github.com/PavishK/ToDO-SMART",
+  "demo": "https://to-do-smart.vercel.app/"
+}
+]

@@ -23,7 +23,7 @@ function NavBar({ onClickMenu, changeBg, activeSection }) {
         ))}
       </ul>
 
-      <div className='sm:hidden block'>
+      <div className='sm:hidden block self-center'>
         <MenuBar onClickMenu={onClickMenu} activeSection={activeSection} />
       </div>
     </div>
