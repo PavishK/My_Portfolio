@@ -53,6 +53,7 @@ function Home({ onClickMouse }) {
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
         >
           <Image
+            priority
             src="/images/pc.png"
             alt="Pavish Portfolio"
             width={400}
