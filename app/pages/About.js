@@ -41,8 +41,6 @@ const cardVariants = {
 export default function About() {
   const onClickResumeDownload = () => {
     toast.success("Resume downloaded — thank you for your interest!");
-
-    // Create a temporary anchor programmatically
     const link = document.createElement("a");
     link.href = "/resume/PavishK_resume.pdf";
     link.download = "PavishK_resume.pdf";

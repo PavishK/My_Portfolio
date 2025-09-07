@@ -109,6 +109,7 @@ export default function Projects() {
 
             <div className="relative w-full h-64 mb-4">
               <Image
+              priority
                 src={selectedProject.imageSrc}
                 alt={selectedProject.title}
                 fill
