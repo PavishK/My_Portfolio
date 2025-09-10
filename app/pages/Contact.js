@@ -13,7 +13,7 @@ const cards = [
   },
   {
     title: "LinkedIn",
-    href: "https://www.linkedin.com/in/pavish-k",
+    href: "https://www.linkedin.com/in/PavishK",
     icon: <LinkedinIcon className="w-5 h-5" />,
     text: "linkedin.com/in/pavish-k",
   },
