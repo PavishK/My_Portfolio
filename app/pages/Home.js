@@ -5,6 +5,7 @@ import TextType from "@/animations/TextType";
 import "./styledPages.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import TiltCard from "@/animations/TiltCard";
 
 function Home({ onClickMouse }) {
   const gmailId = "kpavish136@gmail.com";
@@ -46,21 +47,24 @@ function Home({ onClickMouse }) {
         </motion.div>
 
         {/* Right Section - Image */}
-        <motion.div
-          className="flex-1 flex items-center justify-center"
-          initial={{ opacity: 0, scale: 0.8, y: 50 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-        >
-          <Image
-            priority
-            src="/images/pc.png"
-            alt="Pavish Portfolio"
-            width={400}
-            height={400}
-            className="w-8/12 rounded-2xl shadow-lg"
-          />
-        </motion.div>
+
+    <motion.div
+      className="flex-1 flex items-center justify-center"
+      initial={{ opacity: 0, scale: 0.8, y: 50 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+    >
+      <TiltCard>
+        <Image
+          priority
+          src="/images/pc.png"
+          alt="Pavish Portfolio"
+          width={400}
+          height={400}
+          className="rounded-2xl shadow-lg"
+        />
+      </TiltCard>
+    </motion.div>
       </div>
 
       {/* Scroll Down */}
