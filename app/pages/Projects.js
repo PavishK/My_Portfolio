@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import projectsData from "../data/projects.json";
 import Image from "next/image";
-import { Github, ExternalLink, XIcon } from "lucide-react";
+import { Github, ExternalLink, XIcon, Globe, Smartphone } from "lucide-react";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -17,7 +17,7 @@ export default function Projects() {
 
   return (
     <div className="w-full py-12 bg-homeBg flex flex-col items-center">
-      <h2 className="text-3xl md:text-5xl font-bold mb-10 text-primary">
+      <h2 className="text-3xl text-accent md:text-5xl font-bold mb-10">
         Projects
       </h2>
 
@@ -42,6 +42,23 @@ export default function Projects() {
                 fill
                 className="object-cover"
               />
+              {/* Catagory */}
+              <div className="absolute left-2 top-2 flex items-center gap-x-2 
+                              bg-[var(--color-accent)] text-[var(--color-bg)] 
+                              px-3 py-1 rounded-full shadow-md">
+                {project.category === "web" ? (
+                  <>
+                    <Globe size={16} />
+                    <span className="text-sm font-semibold">Web App</span>
+                  </>
+                ) : (
+                  <>
+                    <Smartphone size={16} />
+                    <span className="text-sm font-semibold">Mobile App</span>
+                  </>
+                )}
+              </div>
+
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 pointer-events-none">
                 <span className="text-white text-lg font-semibold">

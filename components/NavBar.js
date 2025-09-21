@@ -17,7 +17,7 @@ function NavBar({ onClickMenu, changeBg, activeSection }) {
           className={`cursor-pointer capitalize transition-colors hover:text-accent hover:underline hover:underline-offset-4 
             ${activeSection == item 
               ? 'text-accent font-bold underline underline-offset-4 decoration-2' 
-              : 'text-gray-700'}`}
+              : 'text-gray-700 font-medium'}`}
         >
           {item}
         </li>

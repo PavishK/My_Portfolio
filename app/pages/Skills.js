@@ -14,7 +14,7 @@ const cardVariants = {
 export default function Skills() {
   return (
     <div className="w-full py-12 bg-homeBg flex flex-col items-center">
-      <h2 className="text-3xl md:text-5xl font-bold mb-10 text-primary">
+      <h2 className="text-3xl text-accent md:text-5xl font-bold mb-10">
         Skills
       </h2>
 

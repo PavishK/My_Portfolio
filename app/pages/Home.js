@@ -26,7 +26,7 @@ function Home({ onClickMouse }) {
           <h1 className="sm:text-4xl text-2xl font-bold text-primary w-full text-center sm:text-start">
             {"I'm a "}
             <TextType
-              text={["Full Stack Developer", "Web Developer", "Code Samurai"]}
+              text={["Full Stack Developer", "Web Developer", "Mobile Developer (Expo)", "Code Samurai"]}
               typingSpeed={75}
               pauseDuration={1500}
               showCursor={true}
@@ -69,7 +69,7 @@ function Home({ onClickMouse }) {
 
       {/* Scroll Down */}
       <motion.div
-        className="absolute bottom-0 group text-sm left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce cursor-pointer"
+        className="absolute bottom-8 group text-sm left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}

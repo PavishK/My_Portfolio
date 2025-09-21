@@ -70,8 +70,8 @@ function App() {
       {showScrollTop && (
         <CircleChevronUp
           size={65}
-          className='text-bg transition-transform hover:scale-105 fixed bottom-2 right-2 cursor-pointer'
-          fill='#C2381E'
+          className='text-accent transition-transform hover:scale-105 fixed bottom-2 right-2 cursor-pointer'
+          fill='#FFF7C8'
           onClick={() => scrollToSection('home')}
         />
       )}

@@ -15,7 +15,7 @@ const cards = [
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/PavishK",
     icon: <LinkedinIcon className="w-5 h-5" />,
-    text: "linkedin.com/in/pavish-k",
+    text: "linkedin.com/in/PavishK",
   },
   {
     title: "Email",
@@ -68,7 +68,7 @@ export default function Contact() {
 
       {/* Footer / Copyright */}
       <div className="mt-12 w-full bg-[#0D2920] rounded-lg py-4 text-center text-white text-sm">
-        © {new Date().getFullYear()} PC. All rights reserved.
+        © {new Date().getFullYear()} Pavish K. All rights reserved.
       </div>
     </div>
   );
