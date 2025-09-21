@@ -2,12 +2,14 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { CircleChevronUp } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import NavBar from '@/components/NavBar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import Spinner from '@/components/Spinner';
 
 function App() {
   const sectionRefs = {
@@ -19,11 +21,19 @@ function App() {
   };
 
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [activeSection, setActiveSection] = useState('home'); // default active section
+  const [activeSection, setActiveSection] = useState('home');
+  const [loading, setLoading ] = useState(true);
 
   const scrollToSection = (section) => {
     sectionRefs[section].current.scrollIntoView({ behavior: 'smooth' });
   };
+
+    useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2600);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +61,19 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (loading)
+    return (
+      <AnimatePresence>
+        <motion.div
+          key="spinner"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <Spinner />
+        </motion.div>
+      </AnimatePresence>
+    );
   return (
     <div className='w-full'>
       <div className="sticky top-0 z-[999]">
