@@ -90,14 +90,22 @@ function App() {
       <div ref={sectionRefs.projects}><Projects /></div>
       <div ref={sectionRefs.contact}><Contact /></div>
 
+    <AnimatePresence>
       {showScrollTop && (
-        <CircleChevronUp
-          size={65}
-          className='text-accent transition-transform hover:scale-105 fixed bottom-2 right-2 cursor-pointer'
-          fill='#FFF7C8'
+        <motion.div
+          key="scroll-top"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.5 }}
+          transition={{ duration: 0.3 }}
+          className="fixed bottom-2 right-2 cursor-pointer"
           onClick={() => scrollToSection('home')}
-        />
+        >
+          <CircleChevronUp size={65} fill="#FFF7C8" className="text-accent" />
+        </motion.div>
       )}
+    </AnimatePresence>
+    
     </div>
   );
 }

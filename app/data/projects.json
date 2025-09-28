@@ -76,5 +76,14 @@
   "source": "https://github.com/PavishK/ToDO-SMART",
   "demo": "https://to-do-smart.vercel.app/",
   "category":"web"
+},
+{
+  "title": "Cartly",
+  "imageSrc": "/projects/pr-j.jpg",
+  "description": "A mobile shopping app built with React Native (Expo) that lets users register, log in, and add, update, and manage items, with intelligent price prediction powered by Gemini A",
+  "skills": ["React Native", "Expo", "Express.js", "MongoDB", "Gemini AI"],
+  "source": "https://github.com/PavishK/Cartly",
+  "apk": "https://expo.dev/artifacts/eas/3n6zGdQkctxvMPXCc42d6F.apk",
+  "category": "mobile"
 }
 ]

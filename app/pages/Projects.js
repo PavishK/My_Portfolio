@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import projectsData from "../data/projects.json";
 import Image from "next/image";
-import { Github, ExternalLink, XIcon, Globe, Smartphone } from "lucide-react";
+import { Github, ExternalLink, XIcon, Globe, Smartphone, FileDown } from "lucide-react";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -93,6 +93,17 @@ export default function Projects() {
                     className="flex items-center gap-1 text-accent hover:text-primary font-medium"
                   >
                     <ExternalLink className="w-5 h-5" /> Live
+                  </a>
+                )}
+                {project.apk && (
+                  <a
+                    href={project.apk}
+                    download={`${project.title}.apk`}
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex items-center gap-1 text-accent hover:text-primary font-medium"
+                  >
+                    <FileDown className="w-5 h-5" /> Install
                   </a>
                 )}
               </div>
