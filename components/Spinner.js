@@ -1,64 +1,102 @@
 "use client";
 
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import React from "react";
-import TextType from "@/animations/TextType";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-function SamuraiSpinner() {
+export default function Spinner() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Minimum 3s before finishing loading
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="w-screen h-screen bg-bg flex flex-col items-center justify-center gap-8 relative overflow-hidden">
-      
-      {/* Spinner area */}
-      <div className="relative flex items-center justify-center">
-        {/* Outer katana-style ring with pulse */}
+    <AnimatePresence>
+      {loading && (
         <motion.div
-          className="absolute w-36 h-36 border-[3px] border-t-accent border-gray-300 rounded-full shadow-[0_0_15px_rgba(194,56,30,0.6)]"
-          animate={{ rotate: 360, scale: [1, 1.05, 1] }}
-          transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-        />
-
-        {/* Inner secondary ring */}
-        <motion.div
-          className="absolute w-28 h-28 border-[2px] border-b-accent border-gray-200 rounded-full shadow-[0_0_10px_rgba(194,56,30,0.4)]"
-          animate={{ rotate: -360, scale: [1, 1.02, 1] }}
-          transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }}
-        />
-
-        {/* Center developer icon with subtle bounce */}
-        <motion.div
-          className="relative w-20 h-20"
-          animate={{ scale: [1, 1.08, 1], rotate: [0, 5, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          className="flex flex-col items-center justify-center min-h-screen bg-[var(--color-homeBg)] relative overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
         >
-          <Image
-            priority
-            src="/images/favicon.ico"
-            alt="Developer"
-            fill
-            className="object-contain drop-shadow-2xl"
-          />
-        </motion.div>
-      </div>
+          {/* Floating Flowers (start immediately) */}
+          {[...Array(15)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute text-[var(--color-accent)]"
+              style={{
+                fontSize: `${16 + Math.random() * 20}px`, // random size
+                left: `${Math.random() * 100}%`, // random X
+              }}
+              initial={{ y: "100vh", opacity: 0 }}
+              animate={{ y: ["100vh", "-20vh"], opacity: [0, 1, 0] }}
+              transition={{
+                duration: 4 + Math.random() * 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              🌸
+            </motion.div>
+          ))}
 
-      {/* Samurai-style typing description with extra space */}
-      <motion.div
-        className="mt-6" // Added margin-top to create more space
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.8, type: "spring", stiffness: 120 }}
-      >
-        <TextType
-          text={["Code with the spirit of a Samurai"]}
-          typingSpeed={40}
-          pauseDuration={1500}
-          showCursor={true}
-          cursorCharacter="⍀"
-          textColors={["#C2381E"]}
-        />
-      </motion.div>
-    </div>
+          {/* Animated Icon */}
+          <motion.div
+            className="relative w-28 h-28 mb-6 rounded-xl"
+            animate={{
+              y: [0, -15, 0],
+              scale: [1, 1.05, 1],
+              boxShadow: [
+                "0 0 0px var(--color-accent)",
+                "0 0 20px var(--color-accent)",
+                "0 0 0px var(--color-accent)",
+              ],
+            }}
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Image
+              priority
+              src="/images/favicon.ico"
+              alt="Developer"
+              fill
+              className="object-contain drop-shadow-xl"
+            />
+          </motion.div>
+
+          {/* Loading Text */}
+          <motion.p
+            className="text-xl font-bold text-[var(--color-primary)] tracking-wide"
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 1.2, repeat: Infinity }}
+          >
+            Loading...
+          </motion.p>
+
+          {/* Progress Bar */}
+          <div className="relative w-72 h-3 mt-6 bg-[var(--color-bg)] rounded-full overflow-hidden">
+            <motion.div
+              className="h-3 rounded-full bg-gradient-to-r from-[var(--color-accent)] via-red-400 to-[var(--color-accent)]"
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{
+                duration: 3,
+                ease: "easeInOut",
+              }}
+            />
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
-
-export default SamuraiSpinner;

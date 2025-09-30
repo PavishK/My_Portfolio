@@ -26,7 +26,7 @@ function Home({ onClickMouse }) {
           <h1 className="sm:text-4xl text-2xl font-bold text-primary w-full text-center sm:text-start">
             {"I'm a "}
             <TextType
-              text={["Full Stack Developer", "Web Developer", "Mobile Developer (Expo)", "Code Samurai"]}
+              text={["Full Stack Developer", "Web Developer", "Mobile Developer (Expo)"]}
               typingSpeed={75}
               pauseDuration={1500}
               showCursor={true}

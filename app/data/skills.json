@@ -6,6 +6,7 @@
   { "title": "React", "imageSrc": "/skills/react.png", "level": 85 },
   { "title": "Angular", "imageSrc": "/skills/angular.png", "level": 70 },
   { "title": "Next", "imageSrc": "/skills/nextjs.png", "level": 75 },
+  { "title": "React Native (Expo)", "imageSrc": "/skills/expo.png", "level": 75 },
   { "title": "Node", "imageSrc": "/skills/node.png", "level": 80 },
   { "title": "SpringBoot", "imageSrc": "/skills/spring.png", "level": 70 },
   { "title": "MySQL", "imageSrc": "/skills/mysql.svg", "level": 80 },
