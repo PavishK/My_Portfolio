@@ -6,9 +6,20 @@ import { useEffect, useState } from "react";
 
 export default function Spinner() {
   const [loading, setLoading] = useState(true);
+  const [flowers, setFlowers] = useState([]);
 
   useEffect(() => {
-    // Minimum 3s before finishing loading
+    // Create random flowers only on client (avoid SSR mismatch)
+    setFlowers(
+      [...Array(15)].map(() => ({
+        size: 16 + Math.random() * 20,
+        left: Math.random() * 100,
+        duration: 4 + Math.random() * 2, // random duration for natural effect
+        rotateDir: Math.random() > 0.5 ? 1 : -1, // clockwise or anti-clockwise
+      }))
+    );
+
+    // Finish loading after 3s
     const timer = setTimeout(() => {
       setLoading(false);
     }, 3000);
@@ -17,28 +28,33 @@ export default function Spinner() {
   }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {loading && (
         <motion.div
+          key="spinner"
           className="flex flex-col items-center justify-center min-h-screen bg-[var(--color-homeBg)] relative overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
-          {/* Floating Flowers (start immediately) */}
-          {[...Array(15)].map((_, i) => (
+          {/* Floating + Rotating Flowers */}
+          {flowers.map((flower, i) => (
             <motion.div
               key={i}
               className="absolute text-[var(--color-accent)]"
               style={{
-                fontSize: `${16 + Math.random() * 20}px`, // random size
-                left: `${Math.random() * 100}%`, // random X
+                fontSize: `${flower.size}px`,
+                left: `${flower.left}%`,
               }}
-              initial={{ y: "100vh", opacity: 0 }}
-              animate={{ y: ["100vh", "-20vh"], opacity: [0, 1, 0] }}
+              initial={{ y: "100vh", opacity: 0, rotate: 0 }}
+              animate={{
+                y: ["100vh", "-20vh"],
+                opacity: [0, 1, 0],
+                rotate: [0, 360 * flower.rotateDir],
+              }}
               transition={{
-                duration: 4 + Math.random() * 2,
+                duration: flower.duration,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
