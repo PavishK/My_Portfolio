@@ -4,7 +4,6 @@
   { "title": "JavaScript", "imageSrc": "/skills/javascript.webp", "level": 80 },
   { "title": "TypeScript", "imageSrc": "/skills/typescript.png", "level": 70 },
   { "title": "React", "imageSrc": "/skills/react.png", "level": 85 },
-  { "title": "Angular", "imageSrc": "/skills/angular.png", "level": 70 },
   { "title": "Next", "imageSrc": "/skills/nextjs.png", "level": 75 },
   { "title": "React Native (Expo)", "imageSrc": "/skills/expo.png", "level": 75 },
   { "title": "Node", "imageSrc": "/skills/node.png", "level": 80 },

@@ -129,7 +129,7 @@ export default function Projects() {
               </h3>
               <button
                 onClick={() => setSelectedProject(null)}
-                className="text-accent hover:text-primary font-bold text-xl"
+                className="text-accent hover:text-primary font-bold text-xl cursor-pointer"
               >
                 <XIcon/>
               </button>

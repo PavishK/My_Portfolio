@@ -16,12 +16,18 @@ export default function Spinner() {
       setProgress(value);
       if (value >= 100) {
         clearInterval(interval);
-        setCompleted(true); // mark as completed
-        setTimeout(() => setLoading(false), 800); // give time to show "Completed"
+        setCompleted(true);
+        setTimeout(() => setLoading(false), 800); // keep completed text visible
       }
-    }, 30); // smooth loading speed
+    }, 30);
     return () => clearInterval(interval);
   }, []);
+
+  const getSpinnerText = () => {
+    if (completed) return "ようこそ!";
+    if (progress < 50) return `Initializing ${progress}%`;
+    return `Loading ${progress}%`;
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -34,9 +40,7 @@ export default function Spinner() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
         >
-          {/* Container for image and progress ring */}
           <div className="relative w-40 h-40 flex items-center justify-center">
-            {/* Image (slightly larger) */}
             <motion.div
               className="relative w-28 h-28"
               animate={{ scale: [1, 1.05, 1] }}
@@ -51,11 +55,7 @@ export default function Spinner() {
               />
             </motion.div>
 
-            {/* Circular Progress Ring */}
-            <svg
-              className="absolute w-full h-full rotate-[-90deg]"
-              viewBox="0 0 100 100"
-            >
+            <svg className="absolute w-full h-full rotate-[-90deg]" viewBox="0 0 100 100">
               <circle
                 cx="50"
                 cy="50"
@@ -79,7 +79,6 @@ export default function Spinner() {
             </svg>
           </div>
 
-          {/* Progress number or Completed text */}
           <motion.div
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,11 +86,11 @@ export default function Spinner() {
             className="mt-6 flex flex-col items-center"
           >
             <motion.span
-              className="loading-font text-[var(--color-primary)] font-semibold text-xl tracking-wide"
+              className="loading-font text-accent font-semibold text-xl tracking-wide"
               animate={{ opacity: [1, 0.5, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              {completed ? "Completed!" : `Loading ${progress}%`}
+              {getSpinnerText()}
             </motion.span>
           </motion.div>
         </motion.div>
