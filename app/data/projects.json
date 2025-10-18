@@ -85,5 +85,14 @@
   "source": "https://github.com/PavishK/Cartly",
   "apk": "https://expo.dev/artifacts/eas/3n6zGdQkctxvMPXCc42d6F.apk",
   "category": "mobile"
+},
+{
+  "title": "ZeroWords",
+  "imageSrc": "/projects/pr-k.png",
+  "description": "A modern blogging platform built with Python (Django REST Framework) for the backend and JavaScript (ReactJS) for the frontend. Users can register, log in, and create, read, update, and delete posts seamlessly. PyJWT handles authentication, Axios manages API calls, TailwindCSS provides styling, and MySQL ensures robust data management.",
+  "skills": ["Python", "Django REST Framework", "JavaScript", "ReactJS", "TailwindCSS", "Axios", "MySQL"],
+  "source": "https://github.com/PavishK/ZeroWords",
+  "demo": "https://zerowords.netlify.app/",
+  "category": "web"
 }
 ]

@@ -7,10 +7,11 @@
   { "title": "Next", "imageSrc": "/skills/nextjs.png", "level": 75 },
   { "title": "React Native (Expo)", "imageSrc": "/skills/expo.png", "level": 75 },
   { "title": "Node", "imageSrc": "/skills/node.png", "level": 80 },
-  { "title": "SpringBoot", "imageSrc": "/skills/spring.png", "level": 70 },
   { "title": "MySQL", "imageSrc": "/skills/mysql.svg", "level": 80 },
   { "title": "MongoDB", "imageSrc": "/skills/mongodb.png", "level": 75 },
   { "title": "Tailwind CSS", "imageSrc": "/skills/tailwind_css.svg", "level": 80 },
   { "title": "Java", "imageSrc": "/skills/java.png", "level": 70 },
-  { "title": "Python", "imageSrc": "/skills/python.png", "level": 65 }
+  { "title": "SpringBoot", "imageSrc": "/skills/spring.png", "level": 70 },
+  { "title": "Python", "imageSrc": "/skills/python.png", "level": 75 },
+  { "title": "Django", "imageSrc": "/skills/django.png", "level": 70 }
 ]

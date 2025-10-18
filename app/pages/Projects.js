@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import projectsData from "../data/projects.json";
 import Image from "next/image";
-import { Github, ExternalLink, XIcon, Globe, Smartphone, FileDown } from "lucide-react";
-
+import { Github, ExternalLink, XIcon, Globe, Smartphone, FileDown, PointerIcon  } from "lucide-react";
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -65,6 +64,13 @@ export default function Projects() {
                   Click to see more
                 </span>
               </div>
+
+              <div className="sm:hidden absolute right-2 top-2 flex items-center gap-x-2 
+                              bg-bg text-accent 
+                              p-1 rounded-full shadow-md">
+                  <PointerIcon size={21}/>
+              </div>
+
             </div>
 
             {/* Card content */}
