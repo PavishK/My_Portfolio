@@ -1,100 +1,79 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 
 export default function Spinner() {
-  const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
-  const [completed, setCompleted] = useState(false);
+  const [progress, setProgress] = React.useState(0);
+  const [showText, setShowText] = React.useState(false);
 
-  useEffect(() => {
-    let value = 0;
+  React.useEffect(() => {
     const interval = setInterval(() => {
-      value += 1;
-      setProgress(value);
-      if (value >= 100) {
-        clearInterval(interval);
-        setCompleted(true);
-        setTimeout(() => setLoading(false), 800); // keep completed text visible
-      }
-    }, 30);
-    return () => clearInterval(interval);
-  }, []);
+      setProgress((p) => {
+        if (p >= 60 && !showText) setShowText(true);
 
-  const getSpinnerText = () => {
-    if (completed) return "ようこそ!";
-    if (progress < 50) return `Initializing ${progress}%`;
-    return `Loading ${progress}%`;
-  };
+        if (p < 40) return p + 2;
+        if (p === 40) {
+          setTimeout(() => setProgress(41), 80);
+          return 40;
+        }
+
+        if (p < 80) return p + 1;
+        if (p === 80) {
+          setTimeout(() => setProgress(81), 50);
+          return 80;
+        }
+
+        if (p < 100) return p + 0.5;
+        return 100;
+      });
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, [showText]);
 
   return (
-    <AnimatePresence mode="wait">
-      {loading && (
+    <div className="h-screen w-screen bg-homeBg flex items-center justify-center relative">
+
+      {/* Percentage */}
+      <div className="absolute spinner-font bottom-3 right-3 text-accent text-3xl font-semibold tracking-wider">
+        {Math.floor(progress)}
+      </div>
+
+      <div className="w-20 h-20 relative flex items-center justify-center overflow-visible">
+
+        {/* Horizontal Bar ✔ No continuous animation ✔ Shrinks when text appears */}
         <motion.div
-          key="spinner"
-          className="flex flex-col items-center justify-center min-h-screen bg-[var(--color-homeBg)]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-        >
-          <div className="relative w-40 h-40 flex items-center justify-center">
-            <motion.div
-              className="relative w-28 h-28"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-            >
-              <Image
-                priority
-                src="/images/loading-icon.png"
-                alt="Developer"
-                fill
-                className="object-contain drop-shadow-xl"
-              />
-            </motion.div>
+          initial={{ width: 0, opacity: 0, y: 0, height: 40 }}
+          animate={{
+            width: "100%",
+            opacity: 1,
+            y: showText ? -6 : 0
+          }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="absolute border-t-8 border-b-8 border-accent"
+        />
 
-            <svg className="absolute w-full h-full rotate-[-90deg]" viewBox="0 0 100 100">
-              <circle
-                cx="50"
-                cy="50"
-                r="45"
-                stroke="rgba(255,255,255,0.1)"
-                strokeWidth="5"
-                fill="none"
-              />
-              <motion.circle
-                cx="50"
-                cy="50"
-                r="45"
-                stroke="var(--color-accent)"
-                strokeWidth="5"
-                fill="none"
-                strokeLinecap="round"
-                strokeDasharray="283"
-                strokeDashoffset={283 - (283 * progress) / 100}
-                transition={{ duration: 0.2, ease: "easeInOut" }}
-              />
-            </svg>
-          </div>
+        {/* Vertical Bar */}
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "100%", opacity: 1, y: showText ? -6 : 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="absolute w-10 border-l-8 border-r-8 border-accent"
+        />
 
+        {/* Text */}
+        {showText && (
           <motion.div
-            initial={{ opacity: 0, y: 5 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="mt-6 flex flex-col items-center"
+            transition={{ duration: 0.55, ease: "easeOut" }}
+            className="absolute -bottom-10 text-accent font-bold text-sm tracking-widest text-center whitespace-nowrap"
           >
-            <motion.span
-              className="loading-font text-accent font-semibold text-xl tracking-wide"
-              animate={{ opacity: [1, 0.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              {getSpinnerText()}
-            </motion.span>
+            Crafted by <span className="spinner-font font-bold">PC</span>
           </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+        )}
+      </div>
+    </div>
   );
 }

@@ -47,7 +47,8 @@ export default function Contact() {
             key={index}
             className="bg-homeBg p-6 rounded-lg shadow-lg group flex flex-col items-start gap-2 group hover:bg-accent transition-colors"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, damping: 400}}
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ type: "spring", stiffness: 120, damping: 10, delay: index * 0.1 }}
           >

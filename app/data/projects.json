@@ -51,15 +51,6 @@
   "category":"web"
 },
 {
-  "title": "PixelNoSekai - Anime-Themed Gallery Platform",
-  "imageSrc": "/projects/pr-h.png",
-  "description": "PixelNoSekai is an anime-themed gallery website where users can upload images with notes, view or download them anytime, and manage their collections. Built with Next.js, MySQL, and Prisma, it features secure Google authentication, responsive design, and an attractive UI styled with TailwindCSS.",
-  "skills": ["Next.js", "TypeScript", "MySQL", "Prisma", "Express.js", "Node.js", "TailwindCSS", "Next-Auth (Google)", "Cloudinary"],
-  "source": "https://github.com/PavishK/PixelNoSekai",
-  "demo": "https://pixel-no-sekai.vercel.app",
-  "category":"web"
-},
-{
   "title": "Employee Management System",
   "imageSrc": "/projects/pr-i.png",
   "description": "The Employee Management System (EMS) is a full-stack web application designed to simplify employee data management. It allows administrators to add, update, and delete employees, while providing employees with the ability to view their profiles. Built with React.js for the frontend and Spring Boot with Maven for the backend, it integrates MySQL for data storage and TailwindCSS for a responsive and modern UI.",
