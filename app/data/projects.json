@@ -85,5 +85,14 @@
   "source": "https://github.com/PavishK/ZeroWords",
   "demo": "https://zerowords.netlify.app/",
   "category": "web"
+},
+{
+  "title": "Artfolio",
+  "imageSrc": "/projects/pr-l.png",
+  "description": "A creative portfolio platform designed for artists to showcase their artwork by uploading high-quality images and managing descriptions and profile pictures with ease. Artists can maintain a personalized profile, while clients can directly contact them through an integrated contact system. The platform focuses on performance, security, and a clean modern UI.",
+  "skills": ["Next.js", "JavaScript", "TailwindCSS", "ImageKit", "JWT", "Nodemailer", "Prisma", "MySQL"],
+  "source": "https://github.com/PavishK/Artfolio_website",
+  "demo": "https://artfolio-website.vercel.app/",
+  "category": "web"
 }
 ]
