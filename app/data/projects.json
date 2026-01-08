@@ -74,7 +74,7 @@
   "description": "A mobile shopping app built with React Native (Expo) that lets users register, log in, and add, update, and manage items, with intelligent price prediction powered by Gemini A",
   "skills": ["React Native", "Expo", "Express.js", "MongoDB", "Gemini AI"],
   "source": "https://github.com/PavishK/Cartly",
-  "apk": "https://expo.dev/artifacts/eas/3n6zGdQkctxvMPXCc42d6F.apk",
+  "apk": "https://drive.google.com/file/d/1Zga5VAtbT6xNcvFs4__F74oke69BCteR/view?usp=drive_link",
   "category": "mobile"
 },
 {
