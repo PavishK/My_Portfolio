@@ -2,7 +2,6 @@
 
 import React from "react";
 import TextType from "@/animations/TextType";
-import "./styledPages.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import TiltCard from "@/animations/TiltCard";
@@ -11,7 +10,7 @@ function Home({ onClickMouse }) {
   const gmailId = "kpavish136@gmail.com";
 
   return (
-    <div className="relative background-image h-screen w-full px-6 flex flex-col sm:flex-row gap-y-6 sm:items-center sm:justify-center items-start">
+    <div className="relative bg-home h-screen w-full px-6 flex flex-col sm:flex-row gap-y-6 sm:items-center sm:justify-center items-start">
       <div className="max-w-6xl w-full flex flex-col-reverse sm:flex-row gap-y-6 items-center justify-between">
         {/* Left Section - Text */}
         <motion.div
@@ -35,7 +34,7 @@ function Home({ onClickMouse }) {
             />
           </h1>
           <p className="text-lg text-gray-600 font-medium">
-            A Web Developer who enjoys building personal projects. Always
+            A Developer who enjoys building personal projects. Always
             exploring new ideas and turning them into real, functional web apps.
           </p>
           <a

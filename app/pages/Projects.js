@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import projectsData from "../data/projects.json";
 import Image from "next/image";
 import { Github, ExternalLink, XIcon, Globe, Smartphone, FileDown, PointerIcon  } from "lucide-react";
+import RevealText from "@/animations/RevealText";
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -16,8 +17,13 @@ export default function Projects() {
 
   return (
     <div className="w-full py-12 bg-homeBg flex flex-col items-center">
-      <h2 className="text-3xl text-accent md:text-5xl font-bold mb-10">
-        Projects
+      <h2 className="text-4xl md:text-5xl font-bold mb-10">
+        <RevealText
+          text="Projects"
+          direction="right"
+          bgColor="bg-accent"
+          textColor="text-accent"
+        />
       </h2>
 
       {/* Cards Grid */}

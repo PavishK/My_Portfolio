@@ -1,41 +1,22 @@
 "use client";
 
 import React from "react";
-import { GithubIcon, LinkedinIcon, Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
-
-const cards = [
-  {
-    title: "GitHub",
-    href: "https://github.com/PavishK",
-    icon: <GithubIcon className="w-5 h-5" />,
-    text: "github.com/PavishK",
-  },
-  {
-    title: "LinkedIn",
-    href: "https://www.linkedin.com/in/PavishK",
-    icon: <LinkedinIcon className="w-5 h-5" />,
-    text: "linkedin.com/in/PavishK",
-  },
-  {
-    title: "Email",
-    href: "mailto:kpavish136@gmail.com",
-    icon: <Mail className="w-5 h-5" />,
-    text: "kpavish136@gmail.com",
-  },
-  {
-    title: "Phone",
-    href: "tel:+919080243942",
-    icon: <Phone className="w-5 h-5" />,
-    text: "+91 908 024 3942",
-  },
-];
+import { cards } from "../data/contact";
+import RevealText from "@/animations/RevealText";
 
 export default function Contact() {
   return (
     <div className="relative w-full py-12 bg-bg flex flex-col items-center text-primary px-6">
 
-      <h2 className="text-3xl md:text-5xl font-bold mb-6 text-accent">Get in Touch</h2>
+      <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <RevealText
+          text="Get in Touch"
+          direction="right"
+          bgColor="bg-accent"
+          textColor="text-accent"
+        />
+     </h2>
       <p className="mb-10 text-gray-700 text-center max-w-2xl">
         Feel free to reach out via GitHub, LinkedIn, Gmail, or phone. I’m always open to
         collaboration and new opportunities.
@@ -65,11 +46,6 @@ export default function Contact() {
             </a>
           </motion.div>
         ))}
-      </div>
-
-      {/* Footer / Copyright */}
-      <div className="mt-12 w-full bg-[#0D2920] rounded-lg py-4 text-center text-white text-sm">
-        © {new Date().getFullYear()} Pavish K. All rights reserved.
       </div>
     </div>
   );

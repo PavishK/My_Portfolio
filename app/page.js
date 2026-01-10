@@ -10,6 +10,7 @@ import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Spinner from "@/components/Spinner";
+import Footer from "@/components/Footer";
 
 function App() {
   const sectionRefs = {
@@ -106,6 +107,10 @@ function App() {
           </div>
           <div ref={sectionRefs.contact}>
             <Contact />
+          </div>
+
+          <div>
+            <Footer/>
           </div>
 
           {/* Scroll-to-top button */}

@@ -18,6 +18,10 @@
     --color-primary:#0F1E1E;
 }
 
+@utility bg-home {
+    @apply absolute inset-0 size-full bg-[url("/images/bg-home.png")] bg-no-repeat bg-center
+}
+
 ::-webkit-scrollbar {
     display: none;
 }

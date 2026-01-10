@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import skillsData from "../data/skills.json"; // adjust path
 import Image from "next/image";
+import RevealText from "@/animations/RevealText";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -14,8 +15,13 @@ const cardVariants = {
 export default function Skills() {
   return (
     <div className="w-full py-12 bg-homeBg flex flex-col items-center">
-      <h2 className="text-3xl text-accent md:text-5xl font-bold mb-10">
-        Skills
+      <h2 className="text-4xl md:text-5xl font-bold mb-10">
+        <RevealText
+          text="Skills"
+          direction="right"
+          bgColor="bg-accent"
+          textColor="text-accent"
+        />
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full px-6">
@@ -51,7 +57,8 @@ export default function Skills() {
               <motion.div
                 className="h-full bg-accent rounded-full"
                 initial={{ width: 0 }}
-                animate={{ width: `${skill.level}%` }}
+                whileInView={{ width: `${skill.level}%` }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               />
             </div>

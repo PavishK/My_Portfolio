@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 
 
 export const metadata = {
-  title: "My Portfolio 🌸",
+  title: "Pavish's Portfolio",
   description: "Portfolio of Pavish – Full Stack Developer specializing in web and mobile development. Showcasing projects, skills, and a passion for building user-friendly applications.",
 };
 
