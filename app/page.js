@@ -11,7 +11,10 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Spinner from "@/components/Spinner";
 import Footer from "@/components/Footer";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
+gsap.registerPlugin( SplitText );
 function App() {
   const sectionRefs = {
     home: useRef(null),
@@ -32,7 +35,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 3333);
     return () => clearTimeout(timer);
   }, []);
 

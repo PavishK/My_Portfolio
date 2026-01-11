@@ -3,19 +3,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cards } from "../data/contact";
-import RevealText from "@/animations/RevealText";
 
 export default function Contact() {
   return (
     <div className="relative w-full py-12 bg-bg flex flex-col items-center text-primary px-6">
 
-      <h2 className="text-4xl md:text-5xl font-bold mb-6">
-        <RevealText
-          text="Get in Touch"
-          direction="right"
-          bgColor="bg-accent"
-          textColor="text-accent"
-        />
+      <h2 className="text-4xl text-accent md:text-5xl font-bold mb-6">
+        Get <span className="text-primary">in</span> Touch
      </h2>
       <p className="mb-10 text-gray-700 text-center max-w-2xl">
         Feel free to reach out via GitHub, LinkedIn, Gmail, or phone. I’m always open to
