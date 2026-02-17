@@ -94,5 +94,28 @@
   "source": "https://github.com/PavishK/Artfolio_website",
   "demo": "https://artfolio-website.vercel.app/",
   "category": "web"
+},
+{
+  "title": "SendTo",
+  "imageSrc": "/projects/pr-m.png",
+  "description": "SendTo is a modern real-time chat application built using the MERN stack. It allows users to register, log in securely, send instant messages, share images via Cloudinary, update profile pictures, and switch between multiple UI themes including Dark, Light, Cyberpunk, Coffee, and Retro. The application features JWT authentication, protected routes, online/offline user status tracking with Socket.IO, and a fully responsive UI designed for performance and scalability.",
+  "skills": [
+    "React (Vite)",
+    "JavaScript",
+    "TailwindCSS",
+    "DaisyUI",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Mongoose",
+    "Socket.IO",
+    "JWT",
+    "Bcrypt",
+    "Cloudinary",
+    "Zustand"
+  ],
+  "source": "https://github.com/PavishK/SendTo_Simple_Chat_App",
+  "demo": "https://sendto-client.onrender.com/",
+  "category": "web"
 }
 ]
