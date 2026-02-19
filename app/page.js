@@ -95,7 +95,7 @@ function App() {
               activeSection={activeSection}
             />
           </div>
-
+        
           <div ref={sectionRefs.home}>
             <Home onClickMouse={() => scrollToSection("about")} />
           </div>
